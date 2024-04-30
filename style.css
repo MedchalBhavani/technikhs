@@ -1,0 +1,144 @@
+
+* {
+    margin: 5px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    margin: 10px;
+}
+
+.header {
+    position: fixed;
+    height: 100px;
+    background-color: red;
+    width: 100%;
+    max-width: 3000px;
+    z-index: 100;
+    font-size: 40px;
+    margin: 2px;
+    padding: 2px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+}
+
+.navitem {
+    display: flex;
+    column-gap: 150px;
+    
+     
+}
+.mainbtn {
+    margin: 20px;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.mainbtn:active {
+    transform: scale(0.95);
+}
+
+.home {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    max-width: 2000px;
+    background-color: blueviolet;
+}
+
+.formcontainer {
+    transform: translate(-10%, -40%) scale(1.2);
+    background-color: lavenderblush;
+    top: 20%;
+    left: 35%;
+    position: relative;
+    max-width: 500px;
+    margin: 5px;
+    transition: all 0.2s ease-out;
+    z-index: 101;
+    pointer-events: none;
+    opacity:0;
+   
+    
+   /* opacity: 0; 
+       transform: translate(-10%, -40%) scale(1.2);
+*/
+    
+   
+}
+
+.home.show.formcontainer {
+    transform: translate(-10%, -40%) scale(1);
+    pointer-events: auto;
+   
+    display: block;
+    opacity: 1;
+
+    /*opacity: 1;
+        transform: translate(-10%, -40%) scale(1);
+*/
+   
+   
+    
+}
+
+.formclose {
+    position: relative;
+    left: 93%;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+    opacity: 0.5;
+    
+}/* opacity: 0.5;*/
+
+.signupform {
+    display: none;
+}
+
+
+
+
+
+.home::before {
+    content: " ";
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    position: absolute;
+    opacity: 1;
+   
+}/*    opacity: 0; */
+
+
+
+.home.show::before {
+    pointer-events: auto;
+    opacity: 0;
+   
+}/*opacity: 1;*/
+
+.formcontainer.active.signupform {
+    display: block;
+}
+
+.formcontainer.active .loginform {
+    display: none;
+}
+
+
